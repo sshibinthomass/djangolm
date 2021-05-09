@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Request</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h3>My tourism</h3>
+        <nav>
+          <ul>
+            <li><a href="login">Login</a></li>
+            <li><a class="current" href="register">register</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="login">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="center">
+          <input type="text" name="name" placeholder="Student Name" /><br />
+          <input type="text" name="phone" placeholder="Phone Number" /><br />
+          <input type="email" name="email" placeholder="Email" /><br />
+          <input type="text" name="regno" placeholder="Register Number" /><br />
+
+          <label for="dept">Department</label>
+          <select name="dept" id="cars">
+            <option value="MCT">MCT</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="CSE">CSE</option></select
+          ><br />
+          <p>Please select your year:</p>
+          <input type="radio" name="year" value="1st Year" />
+          <label for="1st Year">1st Year</label><br />
+          <input type="radio" name="year" value="2nd Year" />
+          <label for="2nd Year">2nd Year</label><br />
+          <input type="radio" name="year" value="3rd Year" />
+          <label for="3rd Year">3rd Year</label><br />
+          <input type="radio" name="year" value="4th Year" />
+          <label for="4th Year">4th Year</label><br />
+          Leave Reason:<br />
+          <textarea name="reason"></textarea><br />
+          <label>Start Date:</label>
+          <input type="date" name="startDate" /><br />
+          <label>End Date:</label>
+          <input type="date" name="endDate" /><br />
+          <input type="submit" />
+        </div>
+      </form>
+    </div>
+    <div>{% for message in messages %} {{message}} {% endfor %}</div>
+  </body>
+</html>

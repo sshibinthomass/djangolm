@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registeration</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h3>My tourism</h3>
+        <nav>
+          <ul>
+            <li><a href="login">Login</a></li>
+            <li><a class="current" href="register">register</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="login">
+      <form action="register" method="POST">
+        {% csrf_token %}
+        <div class="center">
+          <input type="text" name="first_name" placeholder="First Name" /><br />
+
+          <input type="text" name="last_name" placeholder="Last Name" /><br />
+          <input type="text" name="username" placeholder="username" /><br />
+          <input type="email" name="email" placeholder="email" /><br />
+          <input
+            type="password"
+            name="password1"
+            placeholder="Password"
+          /><br />
+
+          <input
+            type="password"
+            name="password2"
+            placeholder="Confirm Password"
+          /><br />
+          <input type="submit" />
+        </div>
+      </form>
+    </div>
+    <div>{% for message in messages %} {{message}} {% endfor %}</div>
+  </body>
+</html>
