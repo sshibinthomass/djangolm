@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Request</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/style.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h3>Leave Management</h3>
+        <nav>
+          <ul>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="../leaverequest/submit">Leave Request</a>
+            </li>
+            <li>
+              <a class="current" href="../leaverequest/alldetails"
+                >Request Details</a
+              >
+            </li>
+            <li><a href="/admin">admin</a></li>
+            <li><a href="../login/logout">Logout</a></li>
+            {% else %}
+            <li><a href="../login/login">Login</a></li>
+            <li><a href="../login/register">register</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <table style="width: 100%">
+      <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Register No</th>
+        <th>Department</th>
+        <th>Student Year</th>
+        <th>Reason</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Date Saved</th>
+      </tr>
+      {% for det in dets %}
+      <tr>
+        <td>{{det.id}}</td>
+        <td>{{det.name}}</td>
+        <td>{{det.phone}}</td>
+        <td>{{det.email}}</td>
+        <td>{{det.regno}}</td>
+        <td>{{det.dept}}</td>
+        <td>{{det.year}}</td>
+        <td>{{det.reason}}</td>
+        <td>{{det.startDate}}</td>
+        <td>{{det.endDate}}</td>
+        <td>{{det.DateTime}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

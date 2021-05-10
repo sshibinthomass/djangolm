@@ -4,5 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.leaverequest,name='leaverequest'),
+    path('submit',views.leaverequest,name='leaverequest'),
+    path('alldetails',views.alldetails,name='alldetails'),
+
 ]

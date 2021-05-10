@@ -15,3 +15,7 @@ def leaverequest(request):
         writ=leaveDetails(name=name,phone=phone,email=email,regno=regno,dept=dept,year=year,reason=reason,startDate=startDate,endDate=endDate)
         writ.save()
     return render(request,'leaverequest.html')
+
+def alldetails(request):
+    dets=leaveDetails.objects.all()
+    return render(request,'alldetails.html',{'dets':dets})

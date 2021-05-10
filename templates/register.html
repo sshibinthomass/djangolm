@@ -6,16 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registeration</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/style.css' %}"
+    />
   </head>
   <body>
     <header>
       <div class="container">
-        <h3>My tourism</h3>
+        <h3>Leave Management</h3>
         <nav>
           <ul>
-            <li><a href="login">Login</a></li>
-            <li><a class="current" href="register">register</a></li>
-            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="../leaverequest/submit">Leave Request</a>
+            </li>
+            <li>
+              <a href="../leaverequest/alldetails">Request Details</a>
+            </li>
+            <li><a href="/admin">admin</a></li>
+            <li><a href="../login/logout">Logout</a></li>
+            {% else %}
+            <li><a href="../login/login">Login</a></li>
+            <li><a class="current" href="../login/register">register</a></li>
+            {% endif %}
           </ul>
         </nav>
       </div>

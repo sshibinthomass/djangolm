@@ -1,0 +1,60 @@
+body {
+  margin: 0px;
+  padding: 0;
+  background-color: rgba(223, 231, 178, 0.493);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 0px;
+  background-color: rgba(37, 36, 110, 0.603);
+  border-bottom: tomato 5px solid;
+}
+
+header h3 {
+  color: rgb(255, 255, 255);
+  float: left;
+  text-transform: uppercase;
+}
+header a {
+  color: rgb(16, 25, 34);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header li {
+  padding-left: 20px;
+  float: right;
+  display: inline;
+}
+
+.login {
+  padding: 20px;
+  margin: auto;
+  width: 20%;
+  border: tomato 3px dotted;
+}
+
+.current {
+  color: rgb(172, 0, 0);
+  font-weight: bold;
+}
+
+.login input {
+  width: 50%;
+  height: 20px;
+  padding: 3px;
+  margin: auto;
+}
+
+.center {
+  margin: 0;
+  padding-left: 30%;
+  left: 50%;
+}
